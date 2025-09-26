@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - xiaomi大兴大悦春风里店</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
+            min-height: 100vh;
+        }
+
+        /* Strikingly风格导航栏 */
+        .s-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .s-navbar-desktop {
+            padding: 15px 0;
+        }
+
+        .s-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .s-nav-inner-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .s-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .s-logo-image img {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+        }
+
+        .s-logo-title {
+            margin-left: 10px;
+        }
+
+        .s-logo-title .s-component-content {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .s-nav-items-and-links {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .s-uncollapsed-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+
+        .s-nav-li {
+            display: flex;
+            align-items: center;
+        }
+
+        .s-nav-link-container a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .s-nav-li.selected .s-nav-link-container a,
+        .s-nav-link-container a:hover {
+            color: #fa6b05;
+        }
+
+        /* 移动端导航 */
+        @media (max-width: 768px) {
+            .s-uncollapsed-nav {
+                display: none;
+            }
+        }
+
+        /* 主要内容 */
+        .main-content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* 大MI图标背景 */
+        .mi-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 400px;
+            background: linear-gradient(45deg, #ff6900, #ff8533);
+            border-radius: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .mi-logo {
+            font-size: 200px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.2);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* 内容区域 */
+        .content-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 40px;
+        }
+
+        .nav-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            padding: 10px 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-overlay-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-overlay-menu a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .main-title {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .main-subtitle {
+            font-size: 48px;
+            font-weight: 300;
+            color: white;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mi-background {
+                width: 400px;
+                height: 300px;
+                border-radius: 60px;
+            }
+
+            .mi-logo {
+                font-size: 120px;
+            }
+
+            .main-title {
+                font-size: 18px;
+            }
+
+            .main-subtitle {
+                font-size: 32px;
+            }
+
+            .content-container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mi-background {
+                width: 300px;
+                height: 200px;
+                border-radius: 40px;
+            }
+
+            .mi-logo {
+                font-size: 80px;
+            }
+
+            .main-subtitle {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Strikingly风格导航栏 -->
+    <div class="s-nav navigator" style="--borderColor: #000; --textColor: #fa6b05; --blockTextColor: #ffffff; --blockBackgroundColor: #fa6b05;">
+        <div class="s-navbar-desktop s-navbar-desktop-normal">
+            <div class="s-nav-inner nav-item-loaded">
+                <div class="s-nav-inner-wrap">
+                    <!-- LOGO区域 -->
+                    <div class="s-logo">
+                        <div class="s-logo-image">
+                            <div class="s-component s-image">
+                                <div class="s-img-wrapper">
+                                    <a href="index.html" aria-label="image link">
+                                        <img alt="" title="" src="images/icon_411871.png" width="40" height="40" style="width: 40px; height: 40px; border-radius: 12px; background: #fa6b05;">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="s-logo-title">
+                            <div class="s-component s-text">
+                                <div class="s-component-content">
+                                    <div class="s-rich-text-wrapper">
+                                        <p>Xiaomi</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 导航菜单项 -->
+                    <div class="s-nav-items-and-links">
+                        <ul class="s-uncollapsed-nav">
+                            <li class="s-nav-li">
+                                <div class="s-nav-link-container">
+                                    <a target="_self" href="index.html">
+                                        <span class="s-font-nav_item s-nav-text">首页</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="s-nav-li selected">
+                                <div class="s-nav-link-container">
+                                    <a target="_self" href="#">
+                                        <span class="s-font-nav_item s-nav-text">关于我们</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="s-nav-li">
+                                <div class="s-nav-link-container">
+                                    <a target="_self" href="门店展陈.html">
+                                        <span class="s-font-nav_item s-nav-text">门店展陈</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="s-nav-li">
+                                <div class="s-nav-link-container">
+                                    <a target="_self" href="用户洞察.html">
+                                        <span class="s-font-nav_item s-nav-text">用户洞察</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容 -->
+    <main class="main-content">
+        <!-- 大MI背景 -->
+        <div class="mi-background">
+            <div class="mi-logo">mi</div>
+        </div>
+
+        <!-- 导航覆盖层 -->
+        <div class="nav-overlay">
+            <ul class="nav-overlay-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="门店展陈.html">门店展陈</a></li>
+                <li><a href="用户洞察.html">用户调查</a></li>
+            </ul>
+        </div>
+
+        <div class="content-container">
+            <p class="main-title">和用户交朋友，做用户心中最酷的公司</p>
+            <h1 class="main-subtitle">关于小米大兴大悦春风里店</h1>
+        </div>
+    </main>
+</body>
+</html>
